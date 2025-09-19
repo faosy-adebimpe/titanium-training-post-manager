@@ -1,69 +1,115 @@
-# React + TypeScript + Vite
+# Post Manager – React + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a **candidate assessment for Titanium Training**.  
+It demonstrates a small Post Manager application built with **React, Vite, and TypeScript**, implementing full **CRUD functionality** with the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+-   **Fetch & Display Posts**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+    -   Fetches 10 posts from `GET /posts?_limit=10`
+    -   Displays each post’s title and body
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+-   **Create Post**
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+    -   Add new post via a form (title + body)
+    -   UI updates immediately after submission
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+-   **Update Post**
+
+    -   Edit post (title + body)
+    -   Updates both API and UI
+
+-   **Delete Post**
+
+    -   Remove post using `DELETE /posts/{id}`
+    -   Reflects instantly in the UI
+
+-   **TypeScript**
+
+    -   Strong typing for props, state, and API responses
+    -   Avoids use of `any`
+
+-   **Bonus (Optional)**
+    -   Pagination
+    -   Success/error snackbars
+
+---
+
+## 🛠️ Tech Stack
+
+-   [React](https://react.dev/) (with Hooks)
+-   [Vite](https://vitejs.dev/) for fast build and dev server
+-   [TypeScript](https://www.typescriptlang.org/) for type safety
+-   [Material UI](https://mui.com/) for UI components (if used)
+-   [React Query](https://tanstack.com/query/latest) for API data fetching
+
+---
+
+## 📂 Project Structure
+
+```
+post-manager/
+├── src/
+│   ├── components/   # Reusable UI components
+│   ├── hooks/        # Custom hooks (e.g. usePosts, useSnackbar)
+│   ├── pages/        # Page components
+│   ├── services/     # API calls
+│   ├── types.ts        # TypeScript types/interfaces
+│   └── App.tsx       # Root component
+├── public/
+├── package.json
+└── tsconfig.json
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚡ Getting Started
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/faosy-adebimpe/titanium-training-post-manager.git
+cd titanium-training-post-manager
 ```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the development server
+
+```bash
+npm run dev
+```
+
+App will be available at **http://localhost:5173**
+
+---
+
+## ✅ Example Usage
+
+-   Open the app in the browser
+-   View list of posts
+-   Add a new post via the form
+-   Edit a post by clicking **Edit**
+-   Delete a post by clicking **Delete**
+
+---
+
+## 📌 Notes
+
+-   This project uses **JSONPlaceholder**, so create/update/delete actions do not persist on refresh.
+-   UI updates optimistically to simulate real-world CRUD behavior.
+-   Designed to be completed within ~3–4 hours as per assessment instructions.
+
+---
+
+## 👨‍💻 Author
+
+**Faosy Adebimpe**  
+Candidate for React Developer at Titanium Training

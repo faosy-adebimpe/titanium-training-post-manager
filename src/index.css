@@ -1,1 +1,6 @@
 @import 'tailwindcss';
+
+/* utilities */
+@utility container {
+    @apply p-3 mx-auto;
+}
