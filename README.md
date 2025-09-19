@@ -3,6 +3,8 @@
 This project is a **candidate assessment for Titanium Training**.  
 It demonstrates a small Post Manager application built with **React, Vite, and TypeScript**, implementing full **CRUD functionality** with the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/).
 
+Hosted and running on Vercel (live demo available): https://titanium-training-post-manager.vercel.app/
+
 ---
 
 ## 🚀 Features
